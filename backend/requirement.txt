@@ -1,0 +1,13 @@
+arxiv>=4.0.1
+chromadb>=1.5.9
+ddgs>=9.15.0
+duckduckgo-search>=8.1.1
+langchain-chroma>=1.1.0
+langchain-google-genai>=4.3.5
+sentence-transformers>=6.0.0
+langchain-huggingface>=1.2.2
+wikipedia>=1.4.0
+openai>=3.6.0
+langchain-openai>=1.6.0
+langmem>=0.0.30
+

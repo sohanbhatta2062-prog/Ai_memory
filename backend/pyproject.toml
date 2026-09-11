@@ -5,8 +5,20 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "arxiv>=4.0.1",
+    "chromadb>=1.5.9",
+    "ddgs>=9.15.0",
+    "duckduckgo-search>=8.1.1",
     "langchain>=1.4.0",
+    "langchain-chroma>=1.1.0",
     "langchain-community>=0.4.2",
+    "langchain-google-genai>=4.3.5",
+    "langchain-huggingface>=1.2.2",
+    "langchain-openai>=1.6.0",
     "langgraph>=1.2.11",
+    "langmem>=0.0.30",
+    "openai>=3.6.0",
     "python-dotenv>=1.2.3",
+    "sentence-transformers>=6.0.0",
+    "wikipedia>=1.4.0",
 ]
