@@ -51,8 +51,8 @@ def recall(query: str, k = 2):
                 "text": text
             }
         )
-
-    # print(ouputs)
+    print(ouputs)
+    return ouputs
 
 # key = "self_info"
 
@@ -60,6 +60,6 @@ def recall(query: str, k = 2):
 
 # # add_memory(key=key, text=text)
 
-# query = "What is my name?"
+query = "What is my name?"
 
-# recall(query=query)
+recall(query=query)

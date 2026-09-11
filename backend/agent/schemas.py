@@ -10,7 +10,7 @@ class State(BaseModel):
 
     search_result: Optional[str] = None
 
-    retrieved_memories: Optional[list[dict]] = None
+    retrieved_memories: Optional[List[dict]] = None
 
     context: Optional[str] = None
 
