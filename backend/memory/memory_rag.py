@@ -34,32 +34,43 @@ def add_memory(key: str, text: str, metadata: dict = None):
     print("Successfully added to memory!!!")
 
 
-def recall(query: str, k = 2):
+THRESHOLD = 1.7 # temproray threshold
+
+def recall(query: str, k = 3):
 
     query_vector = embed_text(text=query)
 
     results = memory_store._collection.query(
-        query_embeddings=query_vector,
-        n_results=k
+        query_embeddings=[query_vector],
+        n_results=k,
+        include=["documents", "metadatas", "distances"]
     )
     ouputs = []
 
-    for key, text in zip(results["ids"][0], results["documents"][0]):
-        ouputs.append(
-            {
-                "key": key,
-                "text": text
-            }
-        )
-    print(ouputs)
+    for key, text, distance in zip(results["ids"][0], results["documents"][0], results["distances"][0]):
+
+        if distance <= THRESHOLD:
+
+            ouputs.append(
+                {
+                    "key": key,
+                    "text": text,
+                    "distance": distance
+                }
+            )
+
+    # print(ouputs)
+    # print("Collection count:", memory_store._collection.count())
+    # print("Raw results:", results)
     return ouputs
 
-# key = "self_info"
+# key = "current_project"
 
-# text = "My name is Sohan Bhatta."
+# text = "Right now i am making a project where a llm model can remeber the conversation history and know me better.."
 
-# # add_memory(key=key, text=text)
+# add_memory(key=key, text=text)
 
-query = "What is my name?"
+# query = "Mount everst"
 
-recall(query=query)
+# recall(query=query)
+

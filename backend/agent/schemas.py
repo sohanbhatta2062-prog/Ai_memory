@@ -16,4 +16,9 @@ class State(BaseModel):
 
     final_result: Optional[str] = None
 
+    should_save: bool = False
+
+class MemoryDecision(BaseModel):
+    should_save: bool
+
 
